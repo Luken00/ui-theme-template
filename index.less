@@ -23,3 +23,30 @@
 @import "styles/text";
 @import "styles/tooltips";
 @import "styles/tree-view";
+@import "styles/inputs";
+@import "styles/notifications";
+@import "styles/background-tips";
+
+body {
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: @base-background-color;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: @background-color-highlight;
+        &:active,
+        &:hover {
+            background-color: @background-color-selected;
+            cursor: pointer;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: @base-background-color;
+        // border-left: 1px solid ${def.border};
+    }
+    .scrollbar-corner {
+        visibility: hidden;
+    }
+}

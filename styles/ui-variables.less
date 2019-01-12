@@ -9,19 +9,11 @@
 // Try to edit some of the values below to see your theme change.
 // A good start is to change the color of the `@base-background-color` variable.
 
-// Amethyst - General Palette
-@palette-dark-color: #1f1144;
-@palette-primary: #7e24ff;
-@palette-complementary: #ff9e00;
-@oalette-opposite: #28fbaa;
-@palette-error: #f44040;
-@palette-success: #5ad15a;
-@palette-warning: #ffc000;
-@palette-text: #fff;
+@import 'syntax-variables';
 
 // Text Colors
-@text-color: fadeout(@palette-text, 45%);
-@text-color-subtle: fadeout(@palette-text, 70%);
+@text-color: @palette-text-light;
+@text-color-subtle: @palette-text-lighter;
 @text-color-highlight: fadeout(@palette-text, 10%);
 @text-color-selected: @palette-text;
 
@@ -36,19 +28,19 @@
 @background-color-warning: @palette-warning;
 @background-color-error: @palette-error;
 
-@background-color-highlight: lighten(@base-background-color, 5%);
-@background-color-selected: lighten(@base-background-color, 10%);
-@app-background-color: darken(@base-background-color, 5%);
-
 // Base colors
 @base-background-color: @palette-dark-color;
 @base-border-color: @base-background-color;
+
+@background-color-highlight: lighten(@base-background-color, 10%);
+@background-color-selected: lighten(@base-background-color, 15%);
+@app-background-color: @base-background-color;
 
 // Component colors
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
 
-@input-background-color: @app-background-color;
+@input-background-color: darken(@base-background-color, 3%);
 @input-border-color: @base-border-color;
 
 @tool-panel-background-color: @base-background-color;
@@ -71,7 +63,7 @@
 @tab-bar-background-color: @base-background-color;
 @tab-bar-border-color: @base-border-color;
 @tab-background-color: @tab-bar-background-color;
-@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
+@tab-background-color-active: lighten(@tab-bar-background-color, 0%);
 @tab-border-color: @base-border-color;
 
 @tree-view-background-color: @base-background-color;
@@ -85,19 +77,19 @@
 @ui-site-color-5: #ebdd5b; // yellow
 
 // Sizes
-@font-size: 14px;
-@input-font-size: 14px;
+@font-size: 12px;
+@input-font-size: 12px;
 
 @disclosure-arrow-size: 14px;
 
-@component-padding: 16px;
-@component-icon-padding: 8px;
-@component-icon-size: 16px;
-@component-line-height: 32px;
+@component-padding: 12px;
+@component-icon-padding: 6px;
+@component-icon-size: 12px;
+@component-line-height: 24px;
 
-@tab-height: 30px;
+@tab-height: 48px;
 
 // Misc
-@component-border-radius: 4px;
+@component-border-radius: 2px;
 @font-family: ".SFNSText-Regular", "SF UI Text", "Lucida Grande", "Segoe UI",
   Ubuntu, Cantarell, sans-serif;

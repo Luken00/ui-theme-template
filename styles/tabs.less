@@ -12,34 +12,79 @@
   .tab {
     color: @text-color;
     height: @tab-height;
-    line-height: @tab-height;
+    // line-height: @tab-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: @font-size;
     border-right: 1px solid @tab-border-color;
     background-color: @tab-background-color;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: 180ms ease-in-out;
+    &:not([data-type="TreeView"]) {
+        cursor: pointer;
+        &:after {
+            content: '';
+            transition: 180ms ease-in-out;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: fadeout(@palette-primary, 70%);
+        }
+    }
+    .title {
+        flex: 1 1 auto;
+    }
+    .close-icon {
+        position: static;
+        flex: 0 0 auto;
+        transition: 180ms ease-in-out;
+        text-align: center;
+        cursor: pointer;
+        opacity: 0;
+        &:hover {
+            color: @palette-primary;
+        }
+    }
+    &:hover {
+        .close-icon {
+            opacity: 1;
+        }
+    }
+    &.active,
+    &:hover {
+        color: @text-color-selected;
+    }
     &.active {
-      color: @text-color-selected;
       background-color: @tab-background-color-active;
+      &:after {
+          background-color: @palette-primary;
+      }
     }
 
+    &.modified:not(:hover) {
+        &:after {
+            background-color: @palette-opposite;
+        }
+        &.active {
+            &:after {
+                background-color: @palette-complementary;
+            }
+        }
+    }
 
-    // Modified Icon (the circle) -------------------
     &.modified:not(:hover) .close-icon {
-      top: 50%;
-      right: @component-padding + 4px; // 4px -> half of icon size
-      margin-top: -3px;
-      border-color: @text-color-info;
-    }
-    &.modified:hover .close-icon {
-      color: currentColor;
-    }
-
-
-    // Close Icon (the X) -------------------
-    .close-icon:hover {
-      color: @text-color-selected;
-    }
-    &.active .close-icon:hover {
-      color: @text-color;
+      &:before { display: block; }
+      top: auto;
+      right: auto;
+      width: auto;
+      height: auto;
+      border: 0;
+      border-radius: 0;
     }
 
 

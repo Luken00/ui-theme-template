@@ -1,0 +1,44 @@
+atom-notifications {
+    atom-notification {
+        white-space: initial !important;
+        // max-height: 70px;
+        // overflow-y: auto;
+        &:first-child:not(:last-child) {
+            padding-top: 32px;
+        }
+        &.primary { .notification-color(@palette-primary); }
+        &.info { .notification-color(@palette-primary); }
+        &.success { .notification-color(@palette-success); }
+        &.warning { .notification-color(@palette-warning); }
+        &.error { .notification-color(@palette-error); }
+    }
+}
+
+
+.notification-color(@bg) {
+    background-color: @bg;
+    .content {
+        background-color: @bg;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: @bg;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: lighten(@bg, 10%);
+        &:active,
+        &:hover {
+            background-color: lighten(@bg, 15%);
+            cursor: pointer;
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: @bg;
+        // border-left: 1px solid ${def.border};
+    }
+    .scrollbar-corner {
+        visibility: hidden;
+    }
+}
