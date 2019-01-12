@@ -43,7 +43,13 @@
     }
 
     .list-item.selected {
-        // color: @text-color-selected;
+        // color: @palette-primary;
+        &.status-modified {
+            color: @syntax-color-modified;
+        }
+        &.status-added {
+            color: @syntax-color-added;
+        }
     }
     .list-tree {
         li {

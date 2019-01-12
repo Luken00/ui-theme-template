@@ -28,10 +28,13 @@ background-tips {
       }
 
       .keystroke {
-        border: 2px solid;
-        padding: 0 @component-padding/2;
-        border-radius: @component-border-radius * 3;
-        font-family: auto; // "Helvetica Neue", Arial, sans-serif;
+        // border: 2px solid;
+        padding: @component-padding/2;
+        border-radius: @component-border-radius;
+        background-color: darken(@app-background-color, 5%);
+        letter-spacing: 3px;
+        border: 0;
+        // font-family: auto; // "Helvetica Neue", Arial, sans-serif;
       }
     }
   }
