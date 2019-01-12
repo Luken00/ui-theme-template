@@ -7,7 +7,7 @@
     border-right: 1px solid @base-border-color;
 }
 
-@tree-view-item-height: 24px;
+@tree-view-item-height: 0px;
 
 .tree-view {
     color: @text-color;
@@ -32,7 +32,9 @@
             align-items: center;
         }
         .selected::before {
-            height: @tree-view-item-height;
+            height: auto;
+            top: 0;
+            bottom: 0;
         }
     }
 
@@ -41,6 +43,9 @@
     }
     .list-tree {
         li {
+            position: relative;
+            padding-top: 6px;
+            padding-bottom: 6px;
             &.selected {
                 background-color: @tree-view-background-color;
             }
