@@ -31,6 +31,8 @@
 // Base colors
 @base-background-color: @palette-dark-color;
 @base-border-color: @base-background-color;
+@darker-base: darken(@base-background-color, 2%);
+@darker-border: darken(@base-background-color, 3%);
 
 @background-color-highlight: lighten(@base-background-color, 10%);
 @background-color-selected: lighten(@base-background-color, 15%);
@@ -43,8 +45,8 @@
 @input-background-color: darken(@base-background-color, 3%);
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: @base-background-color;
-@tool-panel-border-color: @base-border-color;
+@tool-panel-background-color: @darker-base;
+@tool-panel-border-color: @darker-border;
 
 @inset-panel-background-color: lighten(@base-background-color, 4%);
 @inset-panel-border-color: @base-border-color;
@@ -60,14 +62,14 @@
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color: @base-border-color;
 
-@tab-bar-background-color: @base-background-color;
-@tab-bar-border-color: @base-border-color;
+@tab-bar-background-color: @darker-base;
+@tab-bar-border-color: @darker-border;
 @tab-background-color: @tab-bar-background-color;
 @tab-background-color-active: lighten(@tab-bar-background-color, 0%);
-@tab-border-color: @base-border-color;
+@tab-border-color: @darker-border;
 
-@tree-view-background-color: @base-background-color;
-@tree-view-border-color: @base-border-color;
+@tree-view-background-color: @darker-base;
+@tree-view-border-color: @darker-border;
 
 // Site colors
 @ui-site-color-1: hsl(208, 100%, 50%); // blue

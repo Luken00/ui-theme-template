@@ -35,9 +35,24 @@
             height: 2px;
             background-color: fadeout(@palette-primary, 70%);
         }
+        &:before {
+            content: '';
+            transition: 180ms ease-in-out;
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 2px;
+            z-index: 2;
+            pointer-events: none;
+        }
     }
     .title {
         flex: 1 1 auto;
+        &.icon:before {
+            color: @palette-primary;
+        }
     }
     .close-icon {
         position: static;
@@ -45,7 +60,7 @@
         transition: 180ms ease-in-out;
         text-align: center;
         cursor: pointer;
-        opacity: 0;
+        opacity: 0;s
         &:hover {
             color: @palette-primary;
         }
@@ -60,9 +75,14 @@
         color: @text-color-selected;
     }
     &.active {
+
       background-color: @tab-background-color-active;
+      // background-color: @palette-complementary;
       &:after {
           background-color: @palette-primary;
+      }
+      &:before {
+          background-color: fadeout(@palette-primary, 80%);
       }
     }
 
@@ -70,11 +90,16 @@
         &:after {
             background-color: @palette-opposite;
         }
-        &.active {
-            &:after {
-                background-color: @palette-complementary;
+        .title {
+            &.icon:before {
+                color: @palette-opposite;
             }
         }
+        // &.active {
+        //     &:after {
+        //         background-color: @palette-opposite;
+        //     }
+        // }
     }
 
     &.modified:not(:hover) .close-icon {
